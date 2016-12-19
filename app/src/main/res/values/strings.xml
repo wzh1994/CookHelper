@@ -2,4 +2,9 @@
     <string name="app_name">My Application</string>
     <string name="action_settings">Settings</string>
     <string name="textview_bonjour">Bonjour</string>
+    <string name="tab_item_home">首页</string>
+    <string name="tab_item_love">最爱</string>
+    <string name="tab_item_introduce">推荐</string>
+    <string name="tab_item_want">心愿</string>
+    <string name="tab_item_me">我的</string>
 </resources>

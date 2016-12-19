@@ -1,20 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
-    tools:context="com.example.think.myapplication.MainActivity">
-    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent">
+    <LinearLayout
         android:orientation="vertical"
-        android:paddingBottom="50dp"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent">
-        <!-- 搜索栏 -->
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:weightSum="1">
+        <!--搜索-->
+
         <RelativeLayout android:id="@+id/top"
-            android:layout_width="fill_parent"
+            android:layout_width="match_parent"
             android:layout_alignParentTop="true"
             android:paddingLeft="10dp"
             android:paddingRight="10dp"
@@ -23,7 +20,7 @@
 
             <Button android:id="@+id/btnSearch"
                 android:layout_width="40dp"
-                android:layout_height="25dp"
+                android:layout_height="20dp"
                 android:gravity="center"
                 android:layout_centerVertical="true"
                 android:layout_alignParentRight="true"
@@ -47,7 +44,7 @@
                     android:layout_marginRight="10dp"
                     android:paddingLeft="32dp"
                     android:textSize="12sp"
-                    android:hint="请输入文字..."/>
+                    android:hint="搜索..."/>
 
                 <ImageView android:id="@+id/ivDeleteText"
                     android:layout_width="wrap_content"
@@ -63,6 +60,109 @@
 
         </RelativeLayout>
 
-    </RelativeLayout>
+        <!--推荐-->
 
-</android.support.design.widget.CoordinatorLayout>
+        <!--烹饪方法-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="142dp"
+            android:layout_weight="0.07">
+
+        </RelativeLayout>
+
+        <include layout="@layout/home_menu_navigation_slice"/>
+
+        <!--广告-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="34dp">
+
+        </RelativeLayout>
+
+
+
+    </LinearLayout>
+    <RelativeLayout
+    android:layout_width="fill_parent"
+    android:layout_height="60dip"
+    android:layout_gravity="bottom">
+
+    <ImageView
+        android:id="@+id/tab_separate_imgv"
+        android:layout_width="fill_parent"
+        android:layout_height="1px"
+        android:src="@color/black"/>
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:layout_gravity="bottom"
+        android:background="#FFFFFF"
+        android:layout_below="@id/tab_separate_imgv"
+        android:orientation="horizontal" >
+
+        <RadioButton
+            android:id="@+id/rbtn_home"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/tab_item_home"
+            android:drawableTop="@drawable/tab_item_home_selector"
+            android:drawablePadding="@dimen/padding_tab_bottom_drawable"
+            android:textSize="14sp"
+            style="@style/tab_bottom"
+            android:checked="true" />
+
+        <RadioButton
+            android:id="@+id/rbtn_love"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/tab_item_love"
+            android:drawableTop="@drawable/tab_item_love_selector"
+            android:drawablePadding="@dimen/padding_tab_bottom_drawable"
+            android:textSize="14sp"
+            style="@style/tab_bottom"
+            />
+
+        <RadioButton
+            android:id="@+id/rbtn_introduce"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/tab_item_introduce"
+            android:drawableTop="@drawable/tab_item_shopcart_selector"
+            android:drawablePadding="@dimen/padding_tab_bottom_drawable"
+            android:textSize="14sp"
+            style="@style/tab_bottom"
+            />
+
+        <RadioButton
+            android:id="@+id/rbtn_want"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/tab_item_want"
+            android:drawableTop="@drawable/tab_item_want_selector"
+            android:drawablePadding="@dimen/padding_tab_bottom_drawable"
+            android:textSize="14sp"
+            style="@style/tab_bottom"
+            />
+
+        <RadioButton
+            android:id="@+id/rbtn_me"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/tab_item_me"
+            android:drawableTop="@drawable/tab_item_mine_selector"
+            android:drawablePadding="@dimen/padding_tab_bottom_drawable"
+            android:textSize="14sp"
+            style="@style/tab_bottom"
+            />
+    </RadioGroup>
+
+    </RelativeLayout>
+</FrameLayout>

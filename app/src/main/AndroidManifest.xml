@@ -18,6 +18,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".FavoriteActivity" >
+        </activity>
+        <activity android:name=".WantActivity" >
+        </activity>
+        <activity android:name=".SearchActivity" >
+        </activity>
+        <activity android:name=".IntroduceActivity" >
+        </activity>
     </application>
 
 </manifest>

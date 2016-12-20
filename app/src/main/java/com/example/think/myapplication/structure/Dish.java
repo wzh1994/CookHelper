@@ -16,11 +16,11 @@ public class Dish{
     private String feel;
     private String difficulty;
     private Vector<MaterialPair> materials;
-    private Vector<Process> processes;
+    private Vector<Stage> processes;
     //名字，类别，难度，总时间，口感，图片，材料，工艺，序号
     public Dish(String name, int dishType ,String difficulty,int totalTime,String feel,int imageId,Mate[] mate, float[] weight, String[] process, int[] type, int[] clean, int[] time, int index){
         this.materials=new Vector<MaterialPair>();
-        this.processes=new Vector<Process>();
+        this.processes=new Vector<Stage>();
         this.name=name;
         this.imageId=imageId;
         this.difficulty=difficulty;
@@ -32,7 +32,7 @@ public class Dish{
             materials.addElement(new MaterialPair(mate[i],weight[i]));
         }
         for (int i=0;i<process.length;i++){
-            processes.addElement(new Process(process[i],type[i],clean[i],time[i]));
+            processes.addElement(new Stage(process[i],type[i],clean[i],time[i]));
         }
     }
 
@@ -79,7 +79,7 @@ public class Dish{
         return materials;
     }
 
-    public Vector<Process> getProcesses() {
+    public Vector<Stage> getProcesses() {
         return processes;
     }
 

@@ -2,6 +2,7 @@ package com.example.think.myapplication;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -13,7 +14,10 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
+import com.example.think.myapplication.adapter.FragmentAdapter;
 import com.example.think.myapplication.structure.Dishes;
+import com.example.think.myapplication.structure.MyFragment;
+import com.merhold.extensiblepageindicator.ExtensiblePageIndicator;
 
 public class MainActivity extends AppCompatActivity{
     public static Dishes dishes;
@@ -25,6 +29,9 @@ public class MainActivity extends AppCompatActivity{
     private Button introduce;
     private Button want;
     private Button search;
+    private FragmentAdapter mFragmentAdapter;
+    private ViewPager mViewPager;
+    private ExtensiblePageIndicator extensiblePageIndicator;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         presentActivity=0;
@@ -69,6 +76,27 @@ public class MainActivity extends AppCompatActivity{
         introduce=(Button) findViewById(R.id.rbtn_introduce);
         want=(Button) findViewById(R.id.rbtn_want);
         search=(Button) findViewById(R.id.btnSearch);
+
+        extensiblePageIndicator = (ExtensiblePageIndicator) findViewById(R.id.flexibleIndicator);
+        mFragmentAdapter = new FragmentAdapter(getSupportFragmentManager());
+
+        mFragmentAdapter.addFragment(MyFragment.newInstance(R.color.frag1, R.drawable.homepage_fish));
+        mFragmentAdapter.addFragment(MyFragment.newInstance(R.color.frag2, R.drawable.homepage_lajiao));
+        mFragmentAdapter.addFragment(MyFragment.newInstance(R.color.frag3, R.drawable.homepage_chicken));
+
+        mViewPager = (ViewPager) findViewById(R.id.container);
+        mViewPager.setAdapter(mFragmentAdapter);
+        extensiblePageIndicator.initViewPager(mViewPager);
+
+        extensiblePageIndicator = (ExtensiblePageIndicator) findViewById(R.id.flexibleIndicator1);
+        mFragmentAdapter = new FragmentAdapter(getSupportFragmentManager());
+
+        mFragmentAdapter.addFragment(MyFragment.newInstance(R.color.frag1, R.drawable.homepage_cs));
+        mFragmentAdapter.addFragment(MyFragment.newInstance(R.color.frag2, R.drawable.homepage_qr));
+        mFragmentAdapter.addFragment(MyFragment.newInstance(R.color.frag3, R.drawable.homepage_ysms));
+        mViewPager = (ViewPager) findViewById(R.id.container1);
+        mViewPager.setAdapter(mFragmentAdapter);
+        extensiblePageIndicator.initViewPager(mViewPager);
 
         chao.setOnClickListener(new OnClickListener() {
             @Override

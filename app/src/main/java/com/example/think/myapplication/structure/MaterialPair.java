@@ -27,6 +27,10 @@ public class MaterialPair{
         return this.material.getPrice()*weight/500;
     }
 
+    public float getWeight() {
+        return weight;
+    }
+
     public String getName() {
         return this.material.getName();
     }

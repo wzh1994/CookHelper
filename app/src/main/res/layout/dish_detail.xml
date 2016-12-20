@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="508dp"
+        android:weightSum="1">
+        <TextView
+            android:layout_height="20dp"
+            android:layout_width="160dp"
+            android:layout_gravity="center"
+            android:id="@+id/dish_name"
+            android:text=" 名字 "
+            android:textAlignment="center">
+        </TextView>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.2">
+            <ImageView android:id="@+id/dish_image"
+                android:layout_width="132dp"
+                android:layout_height="99dp"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/dish_chicken"
+                android:layout_centerInParent="true"
+                android:paddingRight="20dp"
+                />
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.33"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_height="match_parent"
+                        android:layout_width="134dp"
+                        android:layout_gravity="center"
+                        android:id="@+id/dish_feel"
+                        android:text="    口感：咸鲜"
+                        >
+                    </TextView>
+                    <TextView
+                        android:layout_height="match_parent"
+                        android:layout_width="134dp"
+                        android:layout_gravity="center"
+                        android:id="@+id/dish_method"
+                        android:text="  工艺：炒"
+                        >
+                    </TextView>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.33"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_height="match_parent"
+                        android:layout_width="134dp"
+                        android:layout_gravity="center"
+                        android:id="@+id/dish_time"
+                        android:text="    耗时：10分"
+                        >
+                    </TextView>
+                    <TextView
+                        android:layout_height="match_parent"
+                        android:layout_width="134dp"
+                        android:layout_gravity="center"
+                        android:id="@+id/dish_difficulty"
+                        android:text="  难度：简单"
+                        >
+                    </TextView>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.33"
+                    android:orientation="horizontal"
+                    >
+                    <TextView
+                        android:layout_height="match_parent"
+                        android:layout_width="134dp"
+                        android:layout_gravity="center"
+                        android:id="@+id/dish_energy"
+                        android:text="    热量：100"
+                        >
+                    </TextView>
+                    <TextView
+                        android:layout_height="match_parent"
+                        android:layout_width="134dp"
+                        android:layout_gravity="center"
+                        android:id="@+id/dish_cost"
+                        android:text="  费用：￥10"
+                        >
+                    </TextView>
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/black">
+
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.3">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="食材列表：">
+
+            </TextView>
+            <ListView
+                android:id="@+id/material_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+            </ListView>
+
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/black">
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.4"
+            >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="制作步骤：">
+
+            </TextView>
+            <ListView
+                android:id="@+id/process_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+            </ListView>
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="60dp"
+        android:weightSum="1">
+        <Button
+            android:layout_height="match_parent"
+            android:layout_width="55dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/heart_pad"
+            android:id="@+id/dish_islove"
+            ></Button>
+        <Button
+            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:layout_weight="0.45"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@color/yellow"
+            android:id="@+id/addToWant"
+            android:text="加入心愿篮"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            ></Button>
+
+        <Button
+            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:layout_weight="0.45"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="10dp"
+            android:background="@color/select_light_red"
+            android:id="@+id/doItNow"
+            android:text="立即制作"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            ></Button>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="60dip"
+        android:layout_gravity="bottom">
+
+        <ImageView
+            android:id="@+id/tab_separate_imgv"
+            android:layout_width="fill_parent"
+            android:layout_height="1px"
+            android:src="@color/black"/>
+
+        <RadioGroup
+            android:id="@+id/radioGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:layout_gravity="bottom"
+            android:background="#FFFFFF"
+            android:layout_below="@id/tab_separate_imgv"
+            android:orientation="horizontal" >
+
+            <RadioButton
+                android:id="@+id/rbtn_home"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/tab_item_home"
+                android:drawableTop="@drawable/tab_item_home_selector"
+                android:drawablePadding="@dimen/padding_tab_bottom_drawable"
+                android:textSize="14sp"
+                style="@style/tab_bottom"
+                />
+
+            <RadioButton
+                android:id="@+id/rbtn_love"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/tab_item_love"
+                android:drawableTop="@drawable/tab_item_love_selector"
+                android:drawablePadding="@dimen/padding_tab_bottom_drawable"
+                android:textSize="14sp"
+                style="@style/tab_bottom"
+                />
+
+            <RadioButton
+                android:id="@+id/rbtn_introduce"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/tab_item_introduce"
+                android:drawableTop="@drawable/tab_item_shopcart_selector"
+                android:drawablePadding="@dimen/padding_tab_bottom_drawable"
+                android:textSize="14sp"
+                style="@style/tab_bottom"
+                />
+
+            <RadioButton
+                android:id="@+id/rbtn_want"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/tab_item_want"
+                android:drawableTop="@drawable/tab_item_want_selector"
+                android:drawablePadding="@dimen/padding_tab_bottom_drawable"
+                android:textSize="14sp"
+                style="@style/tab_bottom"
+                />
+
+            <RadioButton
+                android:id="@+id/rbtn_me"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/tab_item_me"
+                android:drawableTop="@drawable/tab_item_mine_selector"
+                android:drawablePadding="@dimen/padding_tab_bottom_drawable"
+                android:textSize="14sp"
+                style="@style/tab_bottom"
+                />
+        </RadioGroup>
+
+    </RelativeLayout>
+</FrameLayout>

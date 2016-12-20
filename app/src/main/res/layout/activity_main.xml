@@ -2,7 +2,8 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
@@ -16,7 +17,7 @@
             android:paddingLeft="10dp"
             android:paddingRight="10dp"
             android:background="@mipmap/search_top_background"
-            android:layout_height="wrap_content">
+            android:layout_height="40dp">
 
             <Button android:id="@+id/btnSearch"
                 android:layout_width="40dp"
@@ -61,21 +62,47 @@
         </RelativeLayout>
 
         <!--推荐-->
-
-        <!--烹饪方法-->
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="142dp"
-            android:layout_weight="0.07">
+            android:layout_height="0dip"
+            android:layout_weight="0.4">
+            <android.support.v4.view.ViewPager
+                android:id="@+id/container"
+                android:layout_width="match_parent"
+                android:layout_height="200dp" />
 
+            <com.merhold.extensiblepageindicator.ExtensiblePageIndicator
+                android:id="@+id/flexibleIndicator"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:indicatorRadius="12dp"
+                app:indicatorPadding="32dp"
+                android:layout_alignBottom="@+id/container"
+                />
         </RelativeLayout>
 
+
+        <!--烹饪方法-->
         <include layout="@layout/home_menu_navigation_slice"/>
 
         <!--广告-->
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="34dp">
+            android:layout_height="0dp"
+            android:layout_weight="0.4">
+            <android.support.v4.view.ViewPager
+                android:id="@+id/container1"
+                android:layout_width="match_parent"
+                android:layout_height="200dp" />
+
+            <com.merhold.extensiblepageindicator.ExtensiblePageIndicator
+                android:id="@+id/flexibleIndicator1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:indicatorRadius="12dp"
+                app:indicatorPadding="32dp"
+                android:layout_alignBottom="@+id/container1"
+                />
 
         </RelativeLayout>
 

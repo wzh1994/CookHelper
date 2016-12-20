@@ -19,7 +19,8 @@ public class Dishes {
     private List<Dish> want;
     private List<Dish> show;
     private List<Dish> love;
-    private Vector<Process> allProcesses;
+    private Dish presentDish;
+    private Vector<Stage> allProcesses;
     private Vector<MaterialPair> allMaterial;
 
     public Dishes(){
@@ -50,7 +51,7 @@ public class Dishes {
         allMaterial = dishes.get(index).getMaterials();
     }
     public void setAllWant(int[] index){
-        allProcesses=new Vector<Process>();
+        allProcesses=new Vector<Stage>();
         allMaterial = new Vector<MaterialPair>();
         //枚举法，计算index之和，然后判断
         int total=0;
@@ -111,8 +112,13 @@ public class Dishes {
             willdo=this.show;
     }
 
+    public Dish getPresentDish() {
+        return presentDish;
+    }
 
-
+    public void setPresentDish(int index) {
+        this.presentDish = dishes.get(index);
+    }
 
     public List<Dish> getLove() {
         return love;
@@ -133,7 +139,7 @@ public class Dishes {
     private void initDishList(){
         Mate[] mate0={Mate.CUCUMBER,Mate.CORIANDER,Mate.CARROT,Mate.WHITE_SUGAR};
         float[] weight0={200,20,20,5};
-        String[] process0={"1.黄瓜、香菜洗净备用，胡罗卜切小片","2.将黄瓜放在砧板上，左手抓住黄瓜一头，右手将菜刀横着用力拍黄瓜","3.将黄瓜切成小段","4.将黄瓜和胡萝卜加蒜末用小勺糖腌几分钟后，倒掉水，再用适量盐再腌10分钟左右，再倒去多余水","5.最后加入生菜拌匀再放置5分钟（不喜欢吃香菜的跳过此步）。吃前淋几滴香油"};
+        String[] process0={"黄瓜、香菜洗净备用，胡罗卜切小片","将黄瓜放在砧板上，左手抓住黄瓜一头，右手将菜刀横着用力拍黄瓜","将黄瓜切成小段","将黄瓜和胡萝卜加蒜末用小勺糖腌几分钟后，倒掉水，再用适量盐再腌10分钟左右，再倒去多余水","最后加入生菜拌匀再放置5分钟（不喜欢吃香菜的跳过此步）。吃前淋几滴香油"};
         int[] type0={1,2,2,2,2};
         int[] clean0={0,0,0,0,0};
         int[] time0={0,0,0,0,0};

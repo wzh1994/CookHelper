@@ -68,4 +68,7 @@
     <color name="botton_nav_bg">#f8f8f8</color>
 
     <color name="bn">#ffa0a0a0</color>
+    <color name="frag1">#1E88E5</color>
+    <color name="frag2">#FDD835</color>
+    <color name="frag3">#8E24AA</color>
 </resources>

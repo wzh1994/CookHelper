@@ -2,6 +2,7 @@ package com.example.think.myapplication.adapter;
 
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,11 +12,13 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.think.myapplication.DishDetailActivity;
 import com.example.think.myapplication.R;
 import com.example.think.myapplication.structure.Dish;
 
 import java.util.List;
 
+import static android.support.v4.content.ContextCompat.startActivity;
 import static com.example.think.myapplication.MainActivity.dishes;
 import static com.example.think.myapplication.MainActivity.presentActivity;
 
@@ -100,6 +103,14 @@ public class DishlistAdapter extends ArrayAdapter<Dish> {
             @Override
             public void onClick(View v) {
 
+            }
+        });
+        dishImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dishes.setPresentDish(dish.getIndex());
+                Intent intent = new Intent(view.getContext(), DishDetailActivity.class);
+                startActivity(view.getContext(),intent,null);
             }
         });
 

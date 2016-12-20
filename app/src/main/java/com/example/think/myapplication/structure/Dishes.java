@@ -15,6 +15,7 @@ import java.util.Vector;
 public class Dishes {
 
     private Vector<Dish> dishes;
+    private List<Dish> willdo;
     private List<Dish> want;
     private List<Dish> show;
     private List<Dish> love;
@@ -26,26 +27,8 @@ public class Dishes {
         want = new ArrayList<Dish>();
         show = new ArrayList<Dish>();
         love = new ArrayList<Dish>();
-        Mate[] mate0={Mate.CUCUMBER,Mate.CORIANDER,Mate.CARROT,Mate.WHITE_SUGAR};
-        float[] weight0={200,20,20,5};
-        String[] process0={"1.黄瓜、香菜洗净备用，胡罗卜切小片","2.将黄瓜放在砧板上，左手抓住黄瓜一头，右手将菜刀横着用力拍黄瓜","3.将黄瓜切成小段","4.将黄瓜和胡萝卜加蒜末用小勺糖腌几分钟后，倒掉水，再用适量盐再腌10分钟左右，再倒去多余水","5.最后加入生菜拌匀再放置5分钟（不喜欢吃香菜的跳过此步）。吃前淋几滴香油"};
-        int[] type0={1,2,2,2,2};
-        int[] clean0={0,0,0,0,0};
-        int[] time0={0,0,0,0,0};
-        //名字，类别，难度，总时间，口感，图片，材料*2，工艺*4，序号
-        dishes.addElement(new Dish("拍黄瓜",1,"困难",10,"咸鲜",R.drawable.dish_cucumber,mate0,weight0,process0,type0,clean0,time0,dishes.size()));
-        dishes.get(0).setLove();
-        dishes.addElement(new Dish("拍黄瓜2",2,"简单",20,"辣",R.drawable.dish_cucumber,mate0,weight0,process0,type0,clean0,time0,dishes.size()));
-
-
-        //以下为模拟.仅有菜名和类别，难度，总时间，口感，图片，材料*2，
-        Mate[] mateNull={};
-        float[] weightNull={};
-        String[] processNull={};
-        int[] typeNull={};
-        int[] cleanNull={};
-        int[] timeNull={};
-        //dishes.addElement(new Dish("",1,"",0,"",0,mateNull,weightNull,processNull,typeNull,cleanNull,timeNull,dishes.size()));
+        willdo= new ArrayList<Dish>();
+        initDishList();
     }
 
     public int dishNumbers(){
@@ -56,7 +39,8 @@ public class Dishes {
         want=new Vector<Dish>();
     }
     public void addWant(int index){
-        want.add(dishes.get(index));
+        if(!want.contains(dishes.get(index)))
+            want.add(dishes.get(index));
     }
     public void deleteWant(int index){
         want.remove(dishes.get(index));
@@ -114,6 +98,22 @@ public class Dishes {
         allMaterial =null;
     }
 
+    public void setWilldo(int id){
+        willdo = new ArrayList<Dish>() ;
+        willdo.add(dishes.get(id));
+    }
+
+    public void setWilldo(boolean want){
+        if (want) {
+            willdo = this.want;
+        }
+        else
+            willdo=this.show;
+    }
+
+
+
+
     public List<Dish> getLove() {
         return love;
     }
@@ -124,5 +124,32 @@ public class Dishes {
 
     public List<Dish> getWant(){
         return this.want;
+    }
+
+    public List<Dish> getWilldo() {
+        return willdo;
+    }
+
+    private void initDishList(){
+        Mate[] mate0={Mate.CUCUMBER,Mate.CORIANDER,Mate.CARROT,Mate.WHITE_SUGAR};
+        float[] weight0={200,20,20,5};
+        String[] process0={"1.黄瓜、香菜洗净备用，胡罗卜切小片","2.将黄瓜放在砧板上，左手抓住黄瓜一头，右手将菜刀横着用力拍黄瓜","3.将黄瓜切成小段","4.将黄瓜和胡萝卜加蒜末用小勺糖腌几分钟后，倒掉水，再用适量盐再腌10分钟左右，再倒去多余水","5.最后加入生菜拌匀再放置5分钟（不喜欢吃香菜的跳过此步）。吃前淋几滴香油"};
+        int[] type0={1,2,2,2,2};
+        int[] clean0={0,0,0,0,0};
+        int[] time0={0,0,0,0,0};
+        //名字，类别，难度，总时间，口感，图片，材料*2，工艺*4，序号
+        dishes.addElement(new Dish("拍黄瓜",1,"困难",10,"咸鲜", R.drawable.dish_cucumber,mate0,weight0,process0,type0,clean0,time0,dishes.size()));
+        dishes.get(0).setLove();
+        dishes.addElement(new Dish("拍黄瓜2",2,"简单",20,"辣",R.drawable.dish_cucumber,mate0,weight0,process0,type0,clean0,time0,dishes.size()));
+
+
+        //以下为模拟.仅有菜名和类别，难度，总时间，口感，图片，材料*2，
+        Mate[] mateNull={};
+        float[] weightNull={};
+        String[] processNull={};
+        int[] typeNull={};
+        int[] cleanNull={};
+        int[] timeNull={};
+        //dishes.addElement(new Dish("",1,"",0,"",0,mateNull,weightNull,processNull,typeNull,cleanNull,timeNull,dishes.size()));
     }
 }

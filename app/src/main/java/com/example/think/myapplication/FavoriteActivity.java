@@ -11,6 +11,7 @@ import android.widget.ListView;
 import com.example.think.myapplication.adapter.DishlistAdapter;
 
 import static com.example.think.myapplication.MainActivity.dishes;
+import static com.example.think.myapplication.MainActivity.presentActivity;
 
 /**
  * Created by Think on 2016/12/19.
@@ -22,6 +23,7 @@ public class FavoriteActivity extends AppCompatActivity {
     private Button want;
 
     protected void onCreate(Bundle savedInstanceState) {
+        presentActivity=1;
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.favorite_list);
@@ -55,5 +57,9 @@ public class FavoriteActivity extends AppCompatActivity {
         ListView listView = (ListView) findViewById(R.id.dish_list);
         listView.setAdapter(adapter);
 
+    }
+    protected void onResume(){
+        super.onResume();
+        presentActivity=1;
     }
 }

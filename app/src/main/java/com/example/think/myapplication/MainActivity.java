@@ -17,6 +17,7 @@ import com.example.think.myapplication.structure.Dishes;
 
 public class MainActivity extends AppCompatActivity{
     public static Dishes dishes;
+    public static int presentActivity=0;
     private ImageView ivDeleteText;
     private EditText  etSearch;
     private LinearLayout chao;
@@ -26,6 +27,7 @@ public class MainActivity extends AppCompatActivity{
     private Button search;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        presentActivity=0;
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_main);
@@ -107,5 +109,10 @@ public class MainActivity extends AppCompatActivity{
                 dishes.setShow(etSearch.getText().toString());
             }
         });
+    }
+
+    protected void onResume(){
+        super.onResume();
+        presentActivity=0;
     }
 }

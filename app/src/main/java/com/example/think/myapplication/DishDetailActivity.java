@@ -122,7 +122,9 @@ public class DishDetailActivity extends AppCompatActivity  {
         doItNow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                dishes.setWilldo(dishes.getPresentDish().getIndex());
+                Intent intent = new Intent(DishDetailActivity.this, DoItNowActivity.class);
+                startActivity(intent);
             }
         });
     }

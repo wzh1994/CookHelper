@@ -76,7 +76,8 @@ public class WantActivity extends AppCompatActivity {
         dotAllNow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(WantActivity.this, IntroduceActivity.class);
+                dishes.setWilldo(true);
+                Intent intent = new Intent(WantActivity.this, DoItNowActivity.class);
                 startActivity(intent);
             }
         });

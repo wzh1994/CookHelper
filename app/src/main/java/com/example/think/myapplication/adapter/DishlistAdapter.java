@@ -13,6 +13,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.think.myapplication.DishDetailActivity;
+import com.example.think.myapplication.DoItNowActivity;
 import com.example.think.myapplication.R;
 import com.example.think.myapplication.structure.Dish;
 
@@ -102,7 +103,9 @@ public class DishlistAdapter extends ArrayAdapter<Dish> {
         doItNow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                dishes.setWilldo(dish.getIndex());
+                Intent intent = new Intent(view.getContext(), DoItNowActivity.class);
+                startActivity(view.getContext(),intent,null);
             }
         });
         dishImage.setOnClickListener(new View.OnClickListener() {

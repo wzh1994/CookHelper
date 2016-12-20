@@ -33,6 +33,9 @@
         <activity android:name=".DishDetailActivity"
             android:theme="@style/AppTheme.NoActionBar" >
         </activity>
+        <activity android:name=".DoItNowActivity"
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
     </application>
 
 </manifest>

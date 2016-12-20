@@ -4,7 +4,45 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     >
-    <include layout="@layout/dishlist"></include>
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="460dp">
+        <include layout="@layout/dishlist"></include>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="40dip"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="60dip">
+        <TextView
+            android:layout_height="40dp"
+            android:layout_width="280dp"
+            android:layout_gravity="center"
+            android:paddingTop="6dp"
+            android:paddingBottom="6dp"
+            android:textSize="20dp"
+            android:id="@+id/intro_info"
+            android:text=" 热量：9999Kcal，成本￥999 "
+            android:textAlignment="center">
+        </TextView>
+        <Button
+            android:layout_height="40dp"
+            android:layout_width="90dp"
+            android:textColor="@color/white"
+            android:text="全部享用"
+            android:background="@color/select_light_red"
+            android:id="@+id/dotAllNow"
+            android:gravity="center"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginRight="5dp"
+            >
+
+        </Button>
+    </RelativeLayout>
     <RelativeLayout
         android:layout_width="fill_parent"
         android:layout_height="60dip"
